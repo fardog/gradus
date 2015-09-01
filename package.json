@@ -1,0 +1,49 @@
+{
+  "name": "gradus",
+  "version": "0.0.0",
+  "description": "Define words",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "npm run compile",
+    "test": "npm run lint && npm run compile && babel-node test/index.js",
+    "lint": "standard src/**/*.js test/**/*.js",
+    "compile": "babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fardog/gradus.git"
+  },
+  "keywords": [
+    "dictionary",
+    "thesaurus"
+  ],
+  "author": "Nathan Wittstock <nate@fardog.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fardog/gradus/issues"
+  },
+  "homepage": "https://github.com/fardog/gradus#readme",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "concat-stream": "^1.5.0",
+    "eslint": "^1.2.1",
+    "eslint-config-standard": "^4.1.0",
+    "eslint-config-standard-react": "^1.0.4",
+    "eslint-plugin-react": "^3.2.3",
+    "eslint-plugin-standard": "^1.2.0",
+    "standard": "^5.1.0",
+    "tape": "^4.2.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "cli-prompt": "^0.4.2",
+    "concat-stream": "^1.5.0",
+    "entities": "^1.1.1",
+    "handlebars": "^3.0.3",
+    "minimist": "^1.2.0",
+    "rc": "^1.1.1",
+    "tiny-templater": "^1.0.2",
+    "wordwrap": "^1.0.0",
+    "xtend": "^4.0.0"
+  }
+}
