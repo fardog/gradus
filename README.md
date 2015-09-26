@@ -1,4 +1,4 @@
-# gradus
+# gradus: pre-alpha
 
 Look up a word using the [wordnik][] API.
 
