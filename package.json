@@ -9,6 +9,9 @@
     "lint": "standard src/**/*.js test/**/*.js",
     "compile": "babel src --out-dir lib"
   },
+  "bin": {
+    "gradus": "./bin/gradus.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fardog/gradus.git"
