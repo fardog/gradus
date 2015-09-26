@@ -1,7 +1,7 @@
 {
   "name": "gradus",
   "version": "0.0.0",
-  "description": "Define words",
+  "description": "Look up a word using the wordnik API.",
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "npm run compile",
