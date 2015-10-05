@@ -4,7 +4,8 @@ import path from 'path'
 import chalk from 'chalk'
 import {decodeHTML as decode} from 'entities'
 import handlebars from 'handlebars'
-import wordwrap from 'wordwrap'
+import strip from 'strip-ansi'
+import wordwrap from '@fardog/wordwrap'
 
 export default render
 
@@ -24,12 +25,15 @@ function render (argv, result, ready) {
 
     const template = handlebars.compile(rawTemplate.toString())
 
-    ready(null, decode(template({result, argv})))
+    ready(null, decode(template({
+      result: argv.limit ? result.slice(0, argv.limit) : result,
+      argv
+    })))
   })
 }
 
 function wrap (start, stop, options) {
-  const wrapFn = wordwrap(Number(start), Number(stop))
+  const wrapFn = wordwrap(Number(start), Number(stop), {lengthFn: len})
 
   return wrapFn(options.fn(this))
 }
@@ -54,10 +58,14 @@ function align (...args) {
   if (align === 'right') {
     let width = Number(args[1])
 
-    return ' '.repeat(width - text.length) + text
+    return ' '.repeat(width - len(text)) + text
   } else if (align === 'center') {
     let width = Number(args[1])
 
-    return ' '.repeat((width - text.length) / 2) + text
+    return ' '.repeat((width - len(text)) / 2) + text
   }
+}
+
+function len (text) {
+  return strip(text).length
 }

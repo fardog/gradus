@@ -4,13 +4,16 @@ export default processCli
 
 function processCli (args, ready) {
   const argv = minimist(args, {
-    aliases: {
-      section: 's'
+    alias: {
+      section: 's',
+      limit: 'l'
     },
     default: {
       section: 'definitions',
-      resource: 'word'
-    }
+      resource: 'word',
+      limit: 0
+    },
+    string: ['section']
   })
 
   const sections = [

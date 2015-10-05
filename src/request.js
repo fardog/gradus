@@ -6,7 +6,8 @@ import templater from 'tiny-templater'
 
 export default wordnikApi
 
-const URL_TEMPLATE = `https://api.wordnik.com/v4/{{ resource }}.json/{{ query }}/{{ section }}?api_key={{ apiKey }}`
+const URL_TEMPLATE = `https://api.wordnik.com/v4/{{ resource }}.json/` +
+  `{{ query }}/{{ section }}?api_key={{ apiKey }}`
 
 const urlTemplate = templater(URL_TEMPLATE)
 
