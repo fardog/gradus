@@ -1,0 +1,7 @@
+{{#with result}}
+{{#each frequency}}
+  {{#color "red,underline"}}{{year}}:{{/color}} {{count}}
+{{/each}}
+
+{{#color "bold,blue"}}{{word}}{{/color}} - {{#color "bold"}}Total: {{totalCount}}{{/color}}
+{{/with}}

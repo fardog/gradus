@@ -1,0 +1,1 @@
+{{#each result}}{{#ifCond type 'stress'}}{{#color "bold"}}{{text}}{{/color}}{{else ifCond type 'secondary stress'}}{{text}}{{else}}{{#color "dim"}}{{text}}{{/color}}{{/ifCond}}{{#unless @last}}-{{/unless}}{{else}}No results.{{/each}}

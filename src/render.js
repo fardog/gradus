@@ -13,6 +13,7 @@ handlebars.registerHelper('urlencode', encodeURIComponent)
 handlebars.registerHelper('wrap', wrap)
 handlebars.registerHelper('color', color)
 handlebars.registerHelper('align', align)
+handlebars.registerHelper('ifCond', ifCond)
 
 function render (argv, result, ready) {
   const templateName = argv.section
@@ -64,6 +65,13 @@ function align (...args) {
 
     return ' '.repeat((width - len(text)) / 2) + text
   }
+}
+
+function ifCond (v1, v2, options) {
+  if (v1 === v2) {
+    return options.fn(this)
+  }
+  return options.inverse(this)
 }
 
 function len (text) {

@@ -1,3 +1,5 @@
+import util from 'util'
+
 import https from 'https'
 import url from 'url'
 
@@ -30,6 +32,10 @@ function wordnikApi (options, ready) {
       }
 
       if (!sent) {
+        if (options.debug) {
+          console.error(util.inspect(body))
+        }
+
         ready(null, body)
       }
     }

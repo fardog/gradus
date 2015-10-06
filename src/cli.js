@@ -6,13 +6,15 @@ function processCli (args, ready) {
   const argv = minimist(args, {
     alias: {
       section: 's',
-      limit: 'l'
+      limit: 'l',
+      debug: 'd'
     },
     default: {
       section: 'definitions',
       resource: 'word',
       limit: 0
     },
+    boolean: ['debug'],
     string: ['section']
   })
 
@@ -23,8 +25,7 @@ function processCli (args, ready) {
     'pronunciations',
     'hyphenation',
     'frequency',
-    'phrases',
-    'etymologies'
+    'phrases'
   ]
 
   const sectionMap = {
@@ -34,8 +35,8 @@ function processCli (args, ready) {
     top: 'topExample',
     related: 'relatedWords',
     pronounce: 'pronunciations',
-    hyphenate: 'hyphenation',
-    etymology: 'etymologies'
+    pronunciation: 'pronunciations',
+    hyphenate: 'hyphenation'
   }
 
   const allowedSections = new Set(sections.concat(Object.keys(sectionMap)))

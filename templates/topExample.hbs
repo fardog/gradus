@@ -1,0 +1,9 @@
+{{#if result}}
+{{#with result}}
+{{#color "blue,bold,underline"}}{{word}}{{/color}}
+{{#wrap 2 60}}{{text}}{{/wrap}}
+{{#align "right" 54}}{{#color "dim" }}from: {{title}}{{/color}}{{/align}}
+{{/with}}
+{{else}}
+No result.
+{{/if}}

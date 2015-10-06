@@ -1,0 +1,9 @@
+{{#each result}}
+{{#color "red,bold,underline"}}{{relationshipType}}{{/color}}
+  {{#each words}}
+  - {{.}}
+  {{/each}}
+
+{{else}}
+No results.
+{{/each}}

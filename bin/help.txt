@@ -19,6 +19,5 @@ pronunciations      Pronunciation
 hyphenation         Valid hyphenations
 frequency           No idea
 phrases             Phrases using the word
-etymologies         History and origin
 
 Powered by Wordnik: https://www.wordnik.com/
