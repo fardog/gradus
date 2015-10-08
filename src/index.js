@@ -1,4 +1,4 @@
-import extend from 'xtend'
+import 'core-js/shim'
 
 import cli from './cli'
 import rc from './rc'
@@ -18,7 +18,7 @@ function gradus (args, ready) {
         return ready(err)
       }
 
-      request(extend(argv, rcOpts), (err, result) => {
+      request(Object.assign(argv, rcOpts), (err, result) => {
         if (err) {
           return ready(err)
         }
